@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <!--The title is coming from controllers-->
+    <p>Welcome to <%= title %></p>
+    <% for (let i = 0; i < flights.length; i++) { %>
+      <ul> <li> <%= flights[i].airline %> </li>
+       <li> <%= flights[i].flightNo %> </li> 
+       <li> <%= flights[i].departs %> </li> 
+      </ul>
+      <% } %>
+      <button><a href='/'>Homepage</a></button>
+  </body>
+</html>

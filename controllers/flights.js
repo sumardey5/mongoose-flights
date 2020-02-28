@@ -8,7 +8,13 @@ module.exports = {
 
   function index(req, res) {
     Flight.find({}, function(err, flights) {
-      res.render('flights/index', { flights });
+      //'{}' = first parameter is query parameter(what we're looking for)
+      //function() is the 2nd parameter 
+      res.render('flights/index', {
+        flights,
+        title: 'List of flights'
+      });
+      //'flights/index' is the ejs that's asking for the flights data
     });
   }
 
