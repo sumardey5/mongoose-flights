@@ -7,7 +7,7 @@ require('./config/database');
 
 var indexRouter = require('./routes/index'); //here 1
 var flightsRouter = require('./routes/flights');
-const destinationRouter = require('./routes/destinations'); //Look here
+var destinationsRouter = require('./routes/destinations'); //Look here
 
 var app = express();
 
@@ -23,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/flights', flightsRouter);
+app.use('/destinations', destinationsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

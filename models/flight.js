@@ -7,7 +7,7 @@ const destinationSchema = new Schema({
       enum: ["AUS", "DFW", "LAX", "SFO", "SEA"]
     },
     arrival: {
-      type: Date
+      type: String
     } 
   });
 
