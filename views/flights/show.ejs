@@ -8,10 +8,20 @@
 </head>
 <body>
         <ul> 
-        <li> <%= flight.airline %> </li>
-        <li> <%= flight.flightNo %> </li> 
-        <li> <%= flight.departs %> </li> 
-        <li> <%= flight.airport %> </li> 
+        <li> Airline: <%= flight.airline %> </li>
+        <li> Flight Number: <%= flight.flightNo %> </li> 
+        <li> Departure Time: <%= flight.departs %> </li> 
+        <li> Departure Airport: <%= flight.airport %> </li> 
+
+        <table>
+          <tbody>
+            <% flight.destinations.forEach(destinations => {%>
+              <li> Arrival Airport: <%=destinations.airport%></li>
+              <li> Arrival Time: <%=destinations.arrival%></li>
+            <% }); %>
+          </tbody>
+        </table>
+
         </ul>
         <section>
         <form action="/destinations/<%= flight._id %>" method="POST">
@@ -23,25 +33,14 @@
               <option value="SFO">SFO</option>
               <option value="SEA">SEA</option>
               </select> <br>
+
+
+              
               <label>Arrival time:
               <input type="text" name="arrival">
               </label><br>
               <button type= "submit" >Add Details</button>
             </form>
-              <%= flight.destinations.airport %>
-              <table>
-                <tbody>
-                  <% flight.destinations.forEach(destinations => {%>
-                    <tr><%= destinations.airport %></tr>
-                    <tr><%= destinations.arrival %></tr>
-                  <% }); %>
-                </tbody>
-              </table>
-
-              <%= flight.destinations %>
-
-
-              <!-- flights -->
         </section>
 </body>
 </html>
