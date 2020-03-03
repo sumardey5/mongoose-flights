@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h3>BOOK A TICKET</h3>
+<section>
+	<form action="/flights/<%= id %>/tickets" method="POST">
+	<label>Book a ticket!<br> (Select a seat from [A-F][1-9]<br>and a price point): <input name="seat" required pattern="[A-F][1-9]\d?" />
+    </label>
+      <input type="number" name="price"/> 
+    </label>
+    <br>
+    <input type="submit" value="Buy a ticket" /> 
+  </form>
+</section>
+  </body>
+  <nav>
+    <button><a href='/flights/'>Flights</a></button>
+    <button><a href='/flights/new/'>Add flight</a></button>
+</nav>
+</html>

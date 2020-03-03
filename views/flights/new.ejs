@@ -3,36 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Flights</title>
+    <title>New Flight</title>
+    <link rel="stylesheet" href="../../public/stylesheets/style.css">
 </head>
 <body>
-
-    <h2>Enter Flights information</h2>
-    <form action="/flights" method="POST">
-        <label>Airline:
-          <input type="text" name="airline">
-        </label><br>
-        <label>Flight Number:
-          <input type="text" name="flightNo">
-        </label><br>
-        <label>Depart time:
-          <input type="text" name="departs">
-        </label><br>
-
-        <label>Destinations:
-        </label>
-        <select name="airport">
-          <option value="AUS">AUS</option>
-          <option value="DFW">DFW</option>
-          <option value="LAX">LAX</option>
-          <option value="SFO">SFO</option>
-          <option value="SEA">SEA</option>
-        </select> <br>
-      <input type="submit" value="Add Flight">
-    </form>
-    <button><a href='/'>Homepage</a></button>
-    
+	<h2>Enter a New Flight</h2>
+	<form action="/flights" method="POST">
+		<label>Airline:
+			<select name="airline">
+				<option value="American">American</option>
+				<option value="Southwest">Southwest</option>
+				<option value="United">United</option>
+			</select>
+		</label><br>
+		<label>Flight Number:
+			<input type="number" name="flightNo">
+		</label><br>
+		<label>Date:
+			<input type="datetime-local" name="departs">
+		</label><br>
+		<label> Airport:
+		<select name="airport">
+			<option value="AUS">AUS</option>
+			<option value="DFW">DFW</option>
+			<option value="DEN">DEN</option>
+			<option value="LAX">LAX</option>
+			<option value="SAN">SAN</option>
+		</select>
+    </label>
+    <br><br>
+		<input type="submit" value="Add Flight">
+	</form>
 </body>
+<nav>
+  <button><a href='/flights/'>Flights</a></button>
+</nav>
 </html>

@@ -1,12 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var flightCtrl = require('../controllers/flights'); 
+const flightsCtrl = require('../controllers/flights');
 
-/* GET users listing. */
-router.get('/', flightCtrl.index);
-router.get('/new', flightCtrl.new);
-router.post('/', flightCtrl.create);
-router.get("/:id", flightCtrl.show);
-// router.delete('/delete/:id', flightCtrl.delete);
+router.get('/', flightsCtrl.index);
+router.get('/new', flightsCtrl.new);
+router.post('/', flightsCtrl.create);
+router.get('/:id', flightsCtrl.show);
 
 module.exports = router;

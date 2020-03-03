@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <!--The title is coming from controllers-->
-    <p>Welcome to <%= title %></p>
-    <% for (let i = 0; i < flights.length; i++) { %>
-      <ul> <li> <%= flights[i].airline %> </li>
-       <li> <%= flights[i].flightNo %> </li> 
-       <li> <%= flights[i].departs %> </li> 
-       <li> <%= flights[i].airport %> </li> 
-      </ul>
-      <button><a href='/delete/:id/'+flights[i].flightNo>X</a></button>
-      <button><a href='/flights/<%=flights[i]._id %>'</a>Details</a></button>
-      <% } %>
-      <!-- ":" is an argument -->
-      <button><a href='/'>Homepage</a></button>
+    <title>Flights</title>
+</head>
+<body>
+    <h1>Flight List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Airline</th>
+                <th>Flight Number</th>
+                <th>Departure Date and Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% flights.forEach(function(flight){ %>
+                <tr>
+                    <td><%= flight.airline %></td>
+                    <td><%= flight.flightNo %></td>
+                    <td><%= flight.departs %></td>
+                    <td><a href="/flights/<%= flight._id %>">Details</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
   </body>
+  <nav>
+    <button><a href='/flights/'>Flights</a></button>
+    <button><a href='/flights/new/'>Add flight</a></button>
+</nav>
 </html>
